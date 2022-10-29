@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block body %}
+
+<h1 class='title text-center mt-5 fw-bold'>작성</h1>
+<div class='container'>
+  <form action="{% url 'day01:create' %}" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form arts_form %}
+    <input class="btn btn-success" type="submit" value="Success">
+    <a href="{% url 'day01:index' %}"class="btn btn-danger">Cancel</a>
+  </form>
+</div>
+{% endblock body %}

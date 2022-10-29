@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container mt-5">
+<h1>{{arts.title }}</h1>
+<hr>
+<h4>{{arts.content }}</h4>
+<p>{{ arts.create_at }} | {{ arts.update_at }}</p>
+<div>
+  <a href="{% url 'day01:delete' arts.pk%}" class="btn btn-danger">Delete</a>
+  <a href="{% url 'day01:update' arts.pk %}" class="btn btn-success">Update</a>
+  <a href="{% url 'day01:index' %}" class="btn btn-primary">List</a>
+
+</div>
+</div>
+{% endblock body %}
