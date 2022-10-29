@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h3 class="text-secondary mt-5">리뷰 제목 : {{ review.title }}</h3>
+<p>상영 시간 : {{ review.running_time }}분</p>
+<hr>
+<p>{{ review.summary}}</p>
+<button type="button" class="btn btn-success" onclick = "location.href = '{% url 'day02:update' review.pk %}' ">수정</button>
+<button type="button" class="btn btn-danger" onclick = "location.href = '{% url 'day02:delete' review.pk %}' ">삭제</button>
+{% endblock body %}
